@@ -9,9 +9,9 @@ type PostCardProps = {
 export default function PostCard({post}: PostCardProps) {
   return (
     <>
-    <div>
+    <div className='bg-gray-950 p-10'>
                <Link href={`/post/${post.id}`}>
-                <h3>{post.title}</h3>
+                <h3 className='text-xl font-bold mb-4'>{post.title}</h3>
                </Link>
                 <p>{post.body}</p>
                 <button onClick={()=>{
