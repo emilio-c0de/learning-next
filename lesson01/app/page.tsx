@@ -1,8 +1,11 @@
-import React  from 'react'
+import Users from '@/components/Users'
+import React from 'react'
 
 export default function HomePage() {
-   
   return (
-    <div>Hola Mundo</div>
+    <>
+        <div>page</div>
+    <Users/>
+    </>
   )
 }

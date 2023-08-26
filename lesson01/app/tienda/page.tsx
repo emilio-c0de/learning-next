@@ -1,13 +1,35 @@
-"use client"
-import {useState} from 'react' 
+"use client";
+
+import React, { useEffect, useState } from 'react'
+type Post = {
+    id: number,
+    title: string
+    body: string
+ }
+const loadPosts = async(): Promise<Array<Post>>=>{
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const data = await res.json(); 
+    return data;
+}
 
 export default function TiendaPage() {
-    const [counter, setCounter] = useState(0)
-    console.log('init')
+    const [posts, setPosts] = useState<Array<Post>>([])
+    useEffect(()=>{
+         loadPosts().then(response=>{
+            setPosts(response)
+         })
+    }, [])
   return (
     <>
-    <div>page</div>
-    <button onClick={()=>setCounter(counter+1)}>Counter {counter}</button>
+        {
+        posts.map((value, index)=>(
+            <div key={index}>
+                <h3>{value.title}</h3>
+                <p>{value.body}</p>
+                
+            </div>
+        ))
+    }
     </>
   )
 }

@@ -1,6 +1,7 @@
+import React from 'react'
 
-export default function Categoria() {
+export default function CategoriaPage() {
   return (
-    <div>Categoria</div>
+    <div>CategoriaPage</div>
   )
 }

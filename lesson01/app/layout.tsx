@@ -7,7 +7,7 @@ export const metadata = {
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
   style: ["italic", "normal"],
-  subsets: ["latin"]
+  subsets:["latin"]
 })
 export default function RootLayout({
   children,
