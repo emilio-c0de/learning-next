@@ -23,6 +23,7 @@ export default async function Page(props: Props) {
     <div>
         <h1>{data.title}</h1>
         <p>{data.body}</p>
+    
         <hr />
         <Suspense fallback={<><h1>Cargando publicaciones...</h1></>}>
             <Posts/>
